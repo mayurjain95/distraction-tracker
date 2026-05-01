@@ -1,1 +1,38 @@
-.idea
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Go
+dist/
+build/
+*.o
+*.a
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Frontend
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
