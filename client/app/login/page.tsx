@@ -29,7 +29,7 @@ export default function Login() {
                 const data = await response.json();
                 // Handle successful login, e.g., store token, redirect}
                 localStorage.setItem('token', data.token);
-                localStorage.setItem('userEmail', data.user.email);
+                localStorage.setItem('userEmail', data.user?.email ?? '');
                 router.push('/dashboard');
             } else {
                 setError("Invalid email or password");

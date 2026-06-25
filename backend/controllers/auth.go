@@ -41,5 +41,5 @@ func Login(c *gin.Context) {
 
 	tokenString, _ := token.SignedString([]byte(os.Getenv("JWT_SECRET")))
 
-	c.JSON(200, gin.H{"token": tokenString})
+	c.JSON(200, gin.H{"token": tokenString, "user": gin.H{"email": user.Email}})
 }

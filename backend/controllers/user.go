@@ -50,6 +50,9 @@ func CreateUser(c *gin.Context) {
 func GetUsers(c *gin.Context) {
 	var users []models.User
 	database.DB.Find(&users)
+	for i := range users {
+		users[i].Password = ""
+	}
 	c.JSON(200, users)
 }
 
@@ -70,5 +73,6 @@ func GetUserByID(c *gin.Context) {
 		c.JSON(404, gin.H{"error": "User not found"})
 		return
 	}
+	user.Password = ""
 	c.JSON(200, user)
 }
